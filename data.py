@@ -58,6 +58,12 @@ class DictDescriptorInfo(TypedDict):
     schema: DictSchema
 
 
+# @TODO verify if it's descriptor or descriptors
+TableType: TypeAlias = Literal[
+    "data", "descriptor", "tags", "tag_names", "tag_aliases", "tag_groups"
+]
+
+
 class TableInfo(TypedDict):
     tableName: str
     entrytype: Literal["form", "timer"]
