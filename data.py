@@ -1,5 +1,7 @@
 from typing import Any, Literal, NotRequired, TypeAlias, TypedDict
+import datetime
 
+DataDatatype: TypeAlias = int | float | str | bool | datetime.datetime | None
 Datatype: TypeAlias = Literal[
     "int",
     "integer",
