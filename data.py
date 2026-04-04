@@ -101,8 +101,13 @@ class MainConfig(TypedDict):
 
 
 # User input
-EntryData: TypeAlias = dict[str, Any]
-Entry: TypeAlias = dict[Literal["data", "descriptors", "tags"], EntryData]
+Entry: TypeAlias = dict[str, Any]
+
+
+class FullEntry(TypedDict):
+    data: Entry
+    descriptors: dict[str, Any]
+    tags: dict[str, Any]
 
 
 class EntryTableData(TypedDict):
