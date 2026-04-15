@@ -35,15 +35,15 @@ PostgresDatatype: TypeAlias = Literal[
 
 class DataColumn(TypedDict):
     name: str
-    parser: Datatype
+    parser: NotRequired[Datatype]
     datatype: Datatype
-    defaultValue: Any
+    defaultValue: NotRequired[Any]
     entrytype: str
-    invalidInputMessage: str | None
+    invalidInputMessage: NotRequired[str]
     comments: NotRequired[bool]
-    description: str | None
-    unique: bool | None
-    optional: bool | None
+    description: NotRequired[str]
+    unique: NotRequired[bool]
+    optional: NotRequired[bool]
 
 
 Schema: TypeAlias = list[DataColumn]
