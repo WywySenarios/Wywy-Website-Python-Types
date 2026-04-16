@@ -1,9 +1,12 @@
-from typing import Iterator
+from typing import Iterator, TypeAlias
 from .data import TableInfo, DescriptorInfo
 from config import CONFIG
 
+TableIterator: TypeAlias = Iterator[tuple[tuple[str, str], TableInfo]]
+DescriptorIterator: TypeAlias = Iterator[tuple[tuple[str, str, str], DescriptorInfo]]
 
-def iter_tables() -> Iterator[tuple[tuple[str, str], TableInfo]]:
+
+def iter_tables() -> TableIterator:
     """Table iterator.
 
     Yields:
@@ -16,7 +19,7 @@ def iter_tables() -> Iterator[tuple[tuple[str, str], TableInfo]]:
             yield (database_name, table_name), table_schema
 
 
-def iter_descriptors() -> Iterator[tuple[tuple[str, str, str], DescriptorInfo]]:
+def iter_descriptors() -> DescriptorIterator:
     """Descriptor iterator.
 
     Yields:
