@@ -17,6 +17,9 @@ Datatype: TypeAlias = Literal[
     "timestamp",
     "enum",
     "geodetic point",
+    "pointer",
+    "polypointer",
+    "polymorphic pointer",
 ]
 PostgresDatatype: TypeAlias = Literal[
     "integer",
