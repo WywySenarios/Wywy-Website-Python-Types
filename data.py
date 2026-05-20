@@ -47,7 +47,7 @@ class DataColumn(TypedDict):
     description: NotRequired[str]
     unique: NotRequired[bool]
     optional: NotRequired[bool]
-    references: NotRequired[str]
+    references: NotRequired[str | list[str]]
 
 
 Schema: TypeAlias = list[DataColumn]
